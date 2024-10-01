@@ -1,0 +1,55 @@
+.why {
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 4rem;
+
+		@include tablet {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 2.5rem;
+		}
+
+		@include mobile {
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+			gap: 2rem;
+		}
+	}
+
+	&-item {
+		position: relative;
+
+		&::after {
+			content: "";
+			width: 1px;
+			height: 60%;
+			top: 20%;
+			right: 0px;
+			left: auto;
+			display: block;
+			position: absolute;
+			background-color: red;
+		}
+
+		&__number {
+			background: $blue-main-gradient;
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: rgba(0, 0, 0, 0);
+			font-size: 60px;
+			font-weight: 600;
+			margin-bottom: 12px;
+
+			@include tablet {
+				font-size: 42px;
+			}
+		}
+
+		&__title {
+			font-size: 16px;
+			font-weight: 400;
+
+			@include tablet {
+			}
+		}
+	}
+}

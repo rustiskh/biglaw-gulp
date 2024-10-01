@@ -1,0 +1,14 @@
+/* Base */
+@import "./base/reset";
+@import "./base/vars";
+@import "./base/mixins";
+@import "./base/base";
+@import "./base/button";
+@import "./base/containers";
+
+/* Blocks */
+@import "./blocks/*.scss";
+@import "./blocks/pages/main-landing/*.scss";
+
+/* No styles code below. Only in modules */
+/* Не пишите CSS код ниже. Только в подключаемых файлах */
