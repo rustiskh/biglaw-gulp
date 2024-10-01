@@ -14,7 +14,89 @@
 	<body>
 		<!-- @@include('blocks/header.html') -->
 
-		@@include('blocks/header.html') @@include('main-landing/hero.html') @@include('main-landing/why.html')
+		@@include('blocks/header.html')
+		<section class="hero">
+			<div class="container hero__wrapper">
+				<div class="hero__main">
+					<h1 class="hero__title title title--color_black">
+						Самостоятельное списание долгов. <br />
+						Процедура банкротства без юристов
+					</h1>
+					<p class="hero__subtitle">
+						Народный юридический сервис для самостоятельного банкротства граждан <br />
+						Теперь вам не нужно обращаться к юристам, чтобы списать долги
+					</p>
+					<a href="" class="hero__button button button--color_main-gradient button--size_lg">Зарегистрироваться</a>
+				</div>
+				<div class="hero__content">
+					<div class="hero__slider swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="img/main-slider/hero-slide-1.webp" alt="" class="hero__slider-img" />
+								<div class="hero__slider-text-content">
+									<h2 class="hero__slider-title">Списание долгов не выходя из дома</h2>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<img src="img/main-slider/hero-slide-2.webp" alt="" class="hero__slider-img" />
+								<div class="hero__slider-text-content">
+									<h2 class="hero__slider-title">Бесплатное внесудебное банкротство</h2>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<img src="img/main-slider/hero-slide-3.webp" alt="" class="hero__slider-img" />
+								<div class="hero__slider-text-content">
+									<h2 class="hero__slider-title">Cопровождение процедуры “под ключ”</h2>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<img src="img/main-slider/hero-slide-4.webp" alt="" class="hero__slider-img" />
+								<div class="hero__slider-text-content">
+									<h2 class="hero__slider-title">Мгновенная оценка рисков для списания долгов</h2>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="why">
+			<div class="container why__wrapper">
+				<div class="why-item">
+					<span class="why-item__number">8+</span>
+					<h3 class="why-item__title">лет списываем долги</h3>
+				</div>
+				<div class="why-item">
+					<span class="why-item__number">9860</span>
+					<h3 class="why-item__title">довольных клиентов</h3>
+				</div>
+				<div class="why-item">
+					<span class="why-item__number">300</span>
+					<h3 class="why-item__title">юристов защищают ваши интересы</h3>
+				</div>
+				<div class="why-item">
+					<span class="why-item__number">100%</span>
+					<h3 class="why-item__title">гарантия результата</h3>
+				</div>
+			</div>
+		</section>
+
+		<section class="features">
+			<div class="container features__wrapper">
+				<div class="features__header">
+					<h2 class="features__title title-h2 title-h2--color-black">Полезные возможности сервиса</h2>
+				</div>
+				<div class="features__content">
+					<div class="features-card">
+						<img src="img/icons/icon-alert.svg" alt="" class="features-card__icon" />
+						<p class="features-card__text">Бесплатная проверка рисков и шансов для списания и реструктуризации долгов</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<script src="./js/index.bundle.js"></script>
 	</body>
 </html>

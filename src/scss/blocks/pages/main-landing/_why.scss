@@ -4,7 +4,7 @@
 		grid-template-columns: repeat(4, minmax(0, 1fr));
 		gap: 4rem;
 
-		@include tablet {
+		@include laptop-small {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 			gap: 2.5rem;
 		}
@@ -18,17 +18,21 @@
 	&-item {
 		position: relative;
 
-		&::after {
-			content: "";
-			width: 1px;
-			height: 60%;
-			top: 20%;
-			right: 0px;
-			left: auto;
-			display: block;
-			position: absolute;
-			background-color: red;
+		@include laptop-small {
+			text-align: center;
 		}
+
+		// &::after {
+		// 	content: "";
+		// 	width: 1px;
+		// 	height: 60%;
+		// 	top: 20%;
+		// 	right: 0px;
+		// 	left: auto;
+		// 	display: block;
+		// 	position: absolute;
+		// 	background-color: red;
+		// }
 
 		&__number {
 			background: $blue-main-gradient;
