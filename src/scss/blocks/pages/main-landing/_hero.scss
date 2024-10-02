@@ -23,14 +23,11 @@
 	}
 
 	&__title {
-		font-size: 28px;
-		font-weight: 700;
 		margin-bottom: 24px;
 
 		@include tablet {
-			margin-bottom: 16px;
-			font-size: 18px;
 			text-align: center;
+			margin-bottom: 16px;
 		}
 	}
 

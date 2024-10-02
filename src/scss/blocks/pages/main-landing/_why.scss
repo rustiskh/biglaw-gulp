@@ -1,4 +1,10 @@
 .why {
+	margin-bottom: 80px;
+
+	@include tablet {
+		margin-bottom: 40px;
+	}
+
 	&__wrapper {
 		display: grid;
 		grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -53,6 +59,7 @@
 			font-weight: 400;
 
 			@include tablet {
+				font-size: 14px;
 			}
 		}
 	}
