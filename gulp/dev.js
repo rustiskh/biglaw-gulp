@@ -73,15 +73,15 @@ gulp.task('html:dev', function () {
 				],
 			})
 		)
-		.pipe(
-			webpHTML({
-				extensions: ['jpg', 'jpeg', 'png', 'gif', 'webp'],
-				retina: {
-					1: '',
-					2: '@2x',
-				},
-			})
-		)
+		// .pipe(
+		// 	webpHTML({
+		// 		extensions: ['jpg', 'jpeg', 'png', 'gif', 'webp'],
+		// 		retina: {
+		// 			1: '',
+		// 			2: '@2x',
+		// 		},
+		// 	})
+		// )
 		.pipe(
 			prettier({
 				tabWidth: 4,
@@ -136,14 +136,14 @@ gulp.task('images:dev', function () {
 		gulp
 			.src(['./src/img/**/*', '!./src/img/svgicons/**/*'])
 			.pipe(changed('./build/img/'))
-			.pipe(
-				imagemin([
-					imageminWebp({
-						quality: 85,
-					}),
-				])
-			)
-			.pipe(rename({ extname: '.webp' }))
+			// .pipe(
+			// 	imagemin([
+			// 		imageminWebp({
+			// 			quality: 85,
+			// 		}),
+			// 	])
+			// )
+			// .pipe(rename({ extname: '.webp' }))
 			.pipe(gulp.dest('./build/img/'))
 			.pipe(gulp.src(['./src/img/**/*', '!./src/img/svgicons/**/*']))
 			.pipe(changed('./build/img/'))
@@ -152,63 +152,63 @@ gulp.task('images:dev', function () {
 	);
 });
 
-const svgStack = {
-	mode: {
-		stack: {
-			example: true,
-		},
-	},
-	shape: {
-		transform: [
-			{
-				svgo: {
-					js2svg: { indent: 4, pretty: true },
-				},
-			},
-		],
-	},
-};
+// const svgStack = {
+// 	mode: {
+// 		stack: {
+// 			example: true,
+// 		},
+// 	},
+// 	shape: {
+// 		transform: [
+// 			{
+// 				svgo: {
+// 					js2svg: { indent: 4, pretty: true },
+// 				},
+// 			},
+// 		],
+// 	},
+// };
 
-const svgSymbol = {
-	mode: {
-		symbol: {
-			sprite: '../sprite.symbol.svg',
-		},
-	},
-	shape: {
-		transform: [
-			{
-				svgo: {
-					js2svg: { indent: 4, pretty: true },
-					plugins: [
-						{
-							name: 'removeAttrs',
-							params: {
-								attrs: '(fill|stroke)',
-							},
-						},
-					],
-				},
-			},
-		],
-	},
-};
+// const svgSymbol = {
+// 	mode: {
+// 		symbol: {
+// 			sprite: '../sprite.symbol.svg',
+// 		},
+// 	},
+// 	shape: {
+// 		transform: [
+// 			{
+// 				svgo: {
+// 					js2svg: { indent: 4, pretty: true },
+// 					plugins: [
+// 						{
+// 							name: 'removeAttrs',
+// 							params: {
+// 								attrs: '(fill|stroke)',
+// 							},
+// 						},
+// 					],
+// 				},
+// 			},
+// 		],
+// 	},
+// };
 
-gulp.task('svgStack:dev', function () {
-	return gulp
-		.src('./src/img/svgicons/**/*.svg')
-		.pipe(plumber(plumberNotify('SVG:dev')))
-		.pipe(svgsprite(svgStack))
-		.pipe(gulp.dest('./build/img/svgsprite/'))
-});
+// gulp.task('svgStack:dev', function () {
+// 	return gulp
+// 		.src('./src/img/svgicons/**/*.svg')
+// 		.pipe(plumber(plumberNotify('SVG:dev')))
+// 		.pipe(svgsprite(svgStack))
+// 		.pipe(gulp.dest('./build/img/svgsprite/'))
+// });
 
-gulp.task('svgSymbol:dev', function () {
-	return gulp
-		.src('./src/img/svgicons/**/*.svg')
-		.pipe(plumber(plumberNotify('SVG:dev')))
-		.pipe(svgsprite(svgSymbol))
-		.pipe(gulp.dest('./build/img/svgsprite/'));
-});
+// gulp.task('svgSymbol:dev', function () {
+// 	return gulp
+// 		.src('./src/img/svgicons/**/*.svg')
+// 		.pipe(plumber(plumberNotify('SVG:dev')))
+// 		.pipe(svgsprite(svgSymbol))
+// 		.pipe(gulp.dest('./build/img/svgsprite/'));
+// });
 
 gulp.task('files:dev', function () {
 	return gulp
@@ -245,8 +245,8 @@ gulp.task('watch:dev', function () {
 	gulp.watch('./src/img/**/*', gulp.parallel('images:dev'));
 	gulp.watch('./src/files/**/*', gulp.parallel('files:dev'));
 	gulp.watch('./src/js/**/*.js', gulp.parallel('js:dev'));
-	gulp.watch(
-		'./src/img/svgicons/*',
-		gulp.series('svgStack:dev', 'svgSymbol:dev')
-	);
+	// gulp.watch(
+	// 	'./src/img/svgicons/*',
+	// 	gulp.series('svgStack:dev', 'svgSymbol:dev')
+	// );
 });

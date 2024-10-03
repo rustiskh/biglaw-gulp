@@ -10,7 +10,8 @@ gulp.task(
 	'default',
 	gulp.series(
 		'clean:dev', 'fontsDev',
-		gulp.parallel('html:dev', 'sass:dev', 'sass-min:dev', 'images:dev', gulp.series('svgStack:dev', 'svgSymbol:dev'), 'files:dev', 'js:dev'),
+		// gulp.parallel('html:dev', 'sass:dev', 'sass-min:dev', 'images:dev', gulp.series('svgStack:dev', 'svgSymbol:dev'), 'files:dev', 'js:dev'),
+		gulp.parallel('html:dev', 'sass:dev', 'sass-min:dev', 'images:dev', 'files:dev', 'js:dev'),
 		gulp.parallel('server:dev', 'watch:dev')
 	)
 );

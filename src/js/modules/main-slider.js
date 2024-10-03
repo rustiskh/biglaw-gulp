@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 // init Swiper:
-const mainSlider = new Swiper('.swiper', {
+export const mainSlider = new Swiper('.hero__slider.swiper', {
     // configure Swiper to use modules
     pagination: {
         el: '.swiper-pagination',
@@ -19,4 +19,17 @@ const mainSlider = new Swiper('.swiper', {
     modules: [Pagination, Autoplay],
 });
 
-export default mainSlider;
+export const stepsSlider = new Swiper('.steps__slider-wrapper.swiper', {
+    // configure Swiper to use modules
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+    },
+    autoplay: {
+        delay: 5000,
+    },
+    centeredSlides: true,
+    loop: true,
+    spaceBetween: 30,
+    modules: [Pagination, Autoplay],
+});

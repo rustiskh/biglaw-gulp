@@ -1,0 +1,51 @@
+.steps {
+	margin-bottom: 80px;
+
+	@include tablet {
+		margin-bottom: 40px;
+	}
+
+	&__slider {
+		margin: 0 auto;
+		width: 800px;
+		height: 500px;
+		background: url("../img/step-slider/MacBookPro.webp");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		@include laptop-small {
+			width: auto;
+			background: url("../img/step-slider/iPhone14pro.webp");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+
+		&-wrapper.swiper {
+			width: 560px;
+			padding-top: 92px;
+			// z-index: -1;
+
+			@include laptop-small {
+				width: 208px;
+				padding-top: 0px;
+				height: 100%;
+			}
+
+			.swiper-slide {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.swiper-pagination {
+				bottom: 0px !important;
+
+				@include laptop-small {
+					bottom: 24px !important;
+				}
+			}
+		}
+	}
+}
