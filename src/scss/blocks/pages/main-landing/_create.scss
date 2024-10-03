@@ -1,0 +1,72 @@
+.create {
+	margin-bottom: 80px;
+
+	@include tablet {
+		margin-bottom: 40px;
+	}
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		gap: 24px;
+
+		@include tablet {
+			flex-direction: column;
+		}
+	}
+
+	&__main {
+		// max-width: 600px;
+		flex: 1 1 60%;
+
+		@include tablet {
+		}
+	}
+
+	&__content {
+		flex: 1 1 30%;
+
+		@include tablet {
+			max-width: 360px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 40px;
+
+		@include tablet {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__list {
+		padding-left: 18px;
+
+		&-item {
+			font-size: 16px;
+			font-weight: 400;
+			color: #212224;
+			margin-bottom: 24px;
+
+			@include tablet {
+				font-size: 14px;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 16px;
+
+				@include tablet {
+					margin-bottom: 8px;
+				}
+			}
+		}
+	}
+
+	&__button {
+		@include tablet {
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}
