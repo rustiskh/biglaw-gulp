@@ -16,6 +16,7 @@ gulp.task(
 	)
 );
 
+// Не использовать
 gulp.task(
 	'docs',
 	gulp.series(

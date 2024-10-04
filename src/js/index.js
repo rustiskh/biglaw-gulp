@@ -7,6 +7,18 @@ mobileNav();
 
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    const header = document.querySelector(".header");
+
+    window.addEventListener("scroll", () => {
+        const currentScroll = window.scrollY;
+        if (currentScroll > 600) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    });
+
     const mainSlider = new Swiper('.hero__slider.swiper', {
         loop: true,
         autoplay: {
@@ -19,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const stepsSlider = new Swiper('.steps__slider-wrapper.swiper', {
-
         pagination: {
             el: '.swiper-pagination',
             type: 'bullets',
@@ -33,19 +44,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const reviewSlider = new Swiper('.review__slider.swiper', {
-        // configure Swiper to use modules
         pagination: {
             el: '.swiper-pagination',
             type: 'bullets',
         },
-        // autoplay: {
-        //     delay: 5000,
-        // },
+        autoplay: {
+            delay: 5000,
+        },
         centeredSlides: true,
         slidesPerView: 'auto',
         autoHeight: false,
         loop: true,
         spaceBetween: 30,
-        // autoHeight: true
     });
 })

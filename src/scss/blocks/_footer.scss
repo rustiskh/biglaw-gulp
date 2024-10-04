@@ -1,6 +1,98 @@
 .footer {
 	&__content {
 		background-color: $blue;
+		padding-bottom: 40px;
+	}
+
+	&__nav {
+		display: flex;
+		gap: 60px;
+		flex-wrap: wrap;
+		padding-top: 60px;
+		padding-bottom: 40px;
+	}
+
+	&-item {
+		&:last-child {
+			margin-left: auto;
+
+			@include tablet {
+				margin-left: 0;
+				order: -1;
+			}
+		}
+		&__header {
+			margin-bottom: 12px;
+		}
+
+		&__title {
+			color: $white;
+			opacity: 0.6;
+			font-size: 12px;
+			font-weight: 400;
+		}
+
+		&__link {
+			display: block;
+			color: $white;
+			font-size: 14px;
+			font-weight: 400;
+
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		&__contact {
+			&-title {
+				color: $white;
+				font-size: 16px;
+				font-weight: 700;
+			}
+
+			&-subtitle {
+				font-size: 12px;
+				font-weight: 300;
+				color: $white;
+
+				margin-bottom: 8px;
+			}
+
+			&-item {
+				display: flex;
+				align-items: center;
+
+				&:not(:last-child) {
+					margin-bottom: 8px;
+				}
+
+				&-icon {
+					width: 29px;
+					height: 29px;
+					margin-right: 12px;
+				}
+
+				&-link {
+					color: $white;
+					font-size: 20px;
+					font-weight: 600;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+
+	&__copywrite {
+		color: $white;
+		font-size: 12px;
+		font-weight: 300;
 	}
 
 	&__logo {
