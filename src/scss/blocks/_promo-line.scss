@@ -8,10 +8,6 @@
 		align-items: center;
 		justify-content: center;
 		gap: 12px;
-
-		@include mobile {
-			flex-direction: column;
-		}
 	}
 
 	&__text {
