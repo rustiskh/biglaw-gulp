@@ -2,6 +2,10 @@
 	box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px -3px 10px 0px inset;
 	background-color: $white;
 
+	&__wrapper {
+		padding-left: 0;
+	}
+
 	&.sticky {
 		position: sticky;
 		top: 0;
