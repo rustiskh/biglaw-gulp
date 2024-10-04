@@ -10,6 +10,10 @@
 		align-items: center;
 		gap: 24px;
 
+		&_reverse {
+			flex-direction: row-reverse;
+		}
+
 		@include tablet {
 			flex-direction: column;
 		}

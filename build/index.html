@@ -9,6 +9,7 @@
 
 		<link rel="icon" type="image/x-icon" href="./img/favicons/favicon.svg" />
 		<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 	</head>
 
 	<body>
@@ -247,7 +248,7 @@
 				</div>
 				<div class="create__content">
 					<div class="create__content-img">
-						<img src="./img/documents-for-bankr-free.png" alt="Подготовка документов" class="create__content-img-item" />
+						<img loading="lazy" src="./img/documents-for-bankr-free.png" alt="Подготовка документов" class="create__content-img-item" />
 					</div>
 				</div>
 			</div>
@@ -261,41 +262,6 @@
 				<div class="review__content">
 					<div class="review__slider swiper">
 						<div class="swiper-wrapper">
-							<!-- <div class="review-card swiper-slide">
-								<div class="review-card__header">
-									<h4 class="review-card__name">NAME</h4>
-									<p class="review-card__prof">prof</p>
-								</div>
-								<div class="review-card__info">
-									<p class="review-card__info-item">
-										Процедура завершена:
-										<span class="review-card__info-accent">
-											XX
-										</span>
-									</p>
-									<p class="review-card__info-item">
-										Долг:
-										<span class="review-card__info-accent">
-											
-										</span>
-									</p>
-								</div>
-								<div class="review-card__main">
-									<p class="review-card__main-text">TEXT</p>
-									<p class="review-card__date">XX</p>
-								</div>
-								<div class="review-card__footer">
-									<img loading="lazy" class="review-card__footer-img" src="./img/review/andrei.png" alt=""/>
-									<div class="review-card__footer-wrapper">
-										<div class="review-card__footer-rating">
-											<img src="./img/icons/icon-star.svg" alt="Рейтинг:" class="review-card__footer-rating-icon" />
-											<p class="review-card__footer-rating-value">XX</p>
-										</div>
-										<p class="review-card__footer-prof">Специалист</p>
-										<p class="review-card__footer-name">XXX</p>
-									</div>
-								</div>
-							</div> -->
 							<!-- 1 -->
 							<div class="review-card swiper-slide">
 								<div class="review-card__header">
@@ -771,6 +737,91 @@
 			</div>
 		</section>
 
+		<section class="create">
+			<div class="container create__wrapper create__wrapper_reverse">
+				<div class="create__main">
+					<h2 class="create__title title title-h2 title--color_black">
+						Банкротство&#160;&#8212; важное решение. <br />
+						Мы&#160;с&#160;вами рядом на&#160;каждом этапе
+					</h2>
+					<ul class="create__list">
+						<li class="create__list-item">Изучайте статьи и&#160;видео-инструкции, составленные для вас опытными юристами для прохождение процедуры списания долгов</li>
+						<li class="create__list-item">
+							Будьте всегда в&#160;курсе статуса рассмотрения вашего дела в&#160;режиме онлайн
+						</li>
+						<li class="create__list-item">
+							Вступайте в&#160;группу BigLaw в&#160;<a class="text-link" href="https://t.me/LLC_Biglaw" target="_blank">Телеграм</a> и&#160;получайте поддержку 24/7
+						</li>
+					</ul>
+					<a href="https://biglaw.ru/auth/register" class="create__button button button--color_main-gradient button--size_lg">Узнать свои шансы на&#160;списание долгов</a>
+				</div>
+				<div class="create__content">
+					<div class="create__content-img">
+						<img loading="lazy" src="./img/bankr-decision.png" alt="Важное решение" class="create__content-img-item" />
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="footer__logo">
+				<a href="/" class="logo logo_white">
+					<img class="logo__icon" src="/img/logotype/logo_white.svg" alt="B" />
+					<div class="logo__content">
+						<span class="logo__text logo__text-main">BigLaw</span>
+						<span class="logo__text logo__text-add"
+							>Народный сервис<br />
+							по&#160;списанию долгов
+						</span>
+					</div>
+				</a>
+			</div>
+			<div class="footer__content">
+				<div class="container footer__wrapper">
+					<div class="footer__nav">
+						<div class="footer-item">
+							<div class="footer-item__header">
+								<p class="footer-item__title">Смотрите также</p>
+							</div>
+							<div class="footer-item__body">
+								<a href="/" class="footer-item__link">О&#160;сервисе</a>
+								<a href="/" class="footer-item__link">Как списать долги</a>
+								<a href="/" class="footer-item__link">О&#160;банкротстве</a>
+								<a href="/" class="footer-item__link">Учебный центр</a>
+							</div>
+						</div>
+						<div class="footer-item">
+							<div class="footer-item__header">
+								<p class="footer-item__title">Документы</p>
+							</div>
+							<div class="footer-item__body">
+								<a href="/" class="footer-item__link">Пользовательское соглашение</a>
+								<a href="/" class="footer-item__link">Политика конфиденциальности</a>
+							</div>
+						</div>
+						<div class="footer-item">
+							<div class="footer-item__header">
+								<p class="footer-item__title">Контакты</p>
+							</div>
+							<div class="footer-item__body">
+								<p class="footer-item__contact-title">Горячая линия</p>
+								<p class="footer-item__contact-subtitle">Бесплатно и&#160;круглосуточно</p>
+								<div class="footer-item__contact-item">
+									<img src="/img/icons/icon-phone.svg" alt="Тел:" class="footer-item__contact-item-icon" />
+									<a href="tel:88007001206" class="footer-item__contact-item-link">8 800 700 12 06</a>
+								</div>
+								<div class="footer-item__contact-item">
+									<img src="/img/icons/icon-telegram.svg" alt="Tg:" class="footer-item__contact-item-icon" />
+									<a href="https://t.me/LLC_Biglaw" class="footer-item__contact-item-link">Мы&#160;в&#160;Telegram</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="footer__copywrite">&#169; 2024 BIGLAW</div>
+				</div>
+			</div>
+		</footer>
+
 		<script src="./js/index.bundle.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 	</body>
 </html>

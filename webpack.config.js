@@ -16,6 +16,26 @@ const config = {
 			},
 		],
 	},
+	// resolve: {
+	// 	fallback: {
+	// 		"fs": false,
+	// 		"path": require.resolve("path-browserify"),
+	// 		"os": require.resolve("os-browserify/browser"),
+	// 		"stream": require.resolve("stream-browserify"),
+	// 		"constants": require.resolve("constants-browserify"),
+	// 		"domain": require.resolve("domain-browser"),
+	// 	}
+	// }
+	resolve: {
+		fallback: {
+			"fs": false,
+			"path": false,
+			"os": false,
+			"stream": false,
+			"constants": false,
+			"domain": false,
+		}
+	}
 };
 
 module.exports = config;

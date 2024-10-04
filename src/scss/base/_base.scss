@@ -16,4 +16,8 @@ img {
 
 a {
 	text-decoration: none;
+
+	&.text-link {
+		text-decoration: underline;
+	}
 }

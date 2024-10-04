@@ -2,6 +2,12 @@
 	display: flex;
 	align-items: center;
 
+	&_white {
+		.logo__content {
+			color: $white;
+		}
+	}
+
 	&__content {
 		color: $blue;
 	}

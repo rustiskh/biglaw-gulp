@@ -47,7 +47,13 @@
 	"dependencies": {
 		"@fancyapps/fancybox": "^3.5.7",
 		"@fancyapps/ui": "^5.0.35",
+		"assert": "^2.1.0",
 		"avif-webp-checker": "^1.0.0",
-		"swiper": "^11.1.14"
+		"constants-browserify": "^1.0.0",
+		"domain-browser": "^5.7.0",
+		"os-browserify": "^0.3.0",
+		"path-browserify": "^1.0.1",
+		"stream-browserify": "^3.0.0",
+		"util": "^0.12.5"
 	}
 }
