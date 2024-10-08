@@ -1,8 +1,9 @@
 .mission {
-	margin-top: 32px;
+	margin-top: 60px;
 	margin-bottom: 80px;
 
 	@include tablet {
+		margin-top: 40px;
 		margin-bottom: 40px;
 	}
 
