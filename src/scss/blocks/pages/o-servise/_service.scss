@@ -1,4 +1,4 @@
-.create {
+.service {
 	margin-bottom: 80px;
 
 	@include tablet {
@@ -8,6 +8,7 @@
 	&__wrapper {
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
 		gap: 24px;
 
 		&_reverse {
@@ -20,18 +21,32 @@
 	}
 
 	&__main {
-		// max-width: 600px;
-		flex: 1 1 60%;
+		max-width: 550px;
+	}
 
-		@include tablet {
+	// &__content {
+	// 	flex: 1 1 30%;
+
+	// 	@include tablet {
+	// 		max-width: 360px;
+	// 	}
+	// }
+
+	&__content {
+		@include laptop-small {
+			width: 100%;
+			max-width: 400px;
 		}
 	}
 
-	&__content {
-		flex: 1 1 30%;
+	&__video-wrapper {
+		width: 530px;
+		border-radius: 30px;
+		overflow: hidden;
+		// height: 454px;
 
-		@include tablet {
-			max-width: 360px;
+		@include laptop-small {
+			width: 100%;
 		}
 	}
 
