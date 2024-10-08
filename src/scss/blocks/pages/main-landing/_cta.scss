@@ -19,10 +19,14 @@
 			}
 		}
 
+		&__main {
+			max-width: 550px;
+		}
+
 		&__content {
 			@include laptop-small {
 				width: 100%;
-				max-width: 300px;
+				max-width: 400px;
 			}
 		}
 
@@ -62,7 +66,7 @@
 		}
 
 		&__video-wrapper {
-			width: 418px;
+			width: 480px;
 			border-radius: 30px;
 			overflow: hidden;
 			// height: 454px;

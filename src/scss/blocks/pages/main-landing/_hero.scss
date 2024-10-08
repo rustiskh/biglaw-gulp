@@ -53,7 +53,7 @@
 	}
 
 	.swiper {
-		width: 418px;
+		width: 480px;
 		// height: 454px;
 
 		@include laptop-small {
@@ -105,7 +105,7 @@
 			text-align: left;
 			bottom: 95px !important;
 
-			@include tablet {
+			@include laptop-small {
 				bottom: 68px !important;
 			}
 		}
