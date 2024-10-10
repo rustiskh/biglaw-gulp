@@ -1,0 +1,138 @@
+.debt-steps {
+	margin-top: 60px;
+	margin-bottom: 80px;
+
+	@include tablet {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+
+	&__wrapper {
+	}
+
+	&__header {
+		margin-bottom: 40px;
+
+		@include tablet {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__title {
+		text-align: center;
+		margin-bottom: 24px;
+
+		@include tablet {
+			margin-bottom: 12px;
+		}
+	}
+
+	&__subtitle {
+		text-align: center;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 2rem 4rem;
+
+		@include laptop-small {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 2.5rem;
+		}
+
+		@include tablet {
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+			gap: 1rem;
+		}
+	}
+
+	&-card {
+		filter: drop-shadow(rgba(54, 96, 224, 0.15) 2px -6px 6px);
+
+		&__bage {
+			display: flex;
+			align-items: center;
+			padding-left: 20px;
+			background-color: #fff;
+			height: 34px;
+			max-width: 120px;
+			clip-path: polygon(82.778% 33.838%, 82.778% 33.838%, 81.79% 27.663%, 80.726% 22.057%, 79.593% 17.041%, 78.397% 12.633%, 77.146% 8.851%, 75.846% 5.715%, 74.505% 3.243%, 73.129% 1.454%, 71.726% 0.367%, 70.301% 0, 0 0, 0 100%, 100% 100%, 100% 100%, 98.576% 99.633%, 97.172% 98.546%, 95.797% 96.757%, 94.455% 94.285%, 93.156% 91.149%, 91.905% 87.367%, 90.709% 82.959%, 89.576% 77.943%, 88.511% 72.337%, 87.523% 66.162%, 82.778% 33.838%);
+			border-top-left-radius: 4px;
+
+			&-title {
+				background: $blue-main-gradient;
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: rgba(0, 0, 0, 0);
+				font-size: 18px;
+				font-weight: 600;
+
+				@include tablet {
+					font-size: 18px;
+				}
+			}
+		}
+
+		&__body {
+			padding: 20px 24px;
+			box-shadow: rgba(54, 96, 224, 0.15) 0px 2px 12px 0px;
+			border-radius: 0px 12px 12px 12px;
+			height: calc(100% - 2rem);
+
+			@include laptop-small {
+				height: calc(100% - 2.5rem);
+			}
+
+			@include tablet {
+				display: flex;
+				align-items: center;
+				padding: 16px;
+				height: auto;
+			}
+		}
+
+		&__text {
+			margin-top: 12px;
+
+			@include tablet {
+				margin-top: 0px;
+				margin-left: 8px;
+			}
+		}
+
+		&__title {
+			color: $black;
+			font-size: 16px;
+			font-weight: 600;
+			margin-bottom: 6px;
+
+			@include tablet {
+				font-size: 14px;
+				margin-bottom: 4px;
+			}
+		}
+
+		&__subtitle {
+			color: $black;
+			font-size: 14px;
+			font-weight: 400;
+
+			@include tablet {
+				font-size: 13px;
+			}
+		}
+	}
+
+	&__control {
+		margin-top: 24px;
+	}
+
+	&__button {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
