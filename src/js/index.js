@@ -7,6 +7,51 @@ mobileNav();
 
 
 document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".article__text-section");
+    const navLinks = document.querySelectorAll(".article__sidebar-list-link");
+
+    // function activateSection() {
+    //     let current = "";
+
+    //     sections.forEach((section) => {
+    //         const sectionTop = section.offsetTop;
+    //         const sectionHeight = section.clientHeight;
+    //         if (window.scrollY >= sectionTop - sectionHeight / 3) {
+    //             current = section.getAttribute("id");
+    //         }
+    //     });
+
+    //     navLinks.forEach((link) => {
+    //         link.classList.remove("active");
+    //         if (link.getAttribute("href").includes(current)) {
+    //             link.classList.add("active");
+    //         }
+    //     });
+    // }
+
+    function activateSection() {
+        let currentSection = sections[0]; // По умолчанию первая секция
+
+        sections.forEach((section) => {
+            const sectionTop = section.getBoundingClientRect().top;
+
+            // Проверяем, что секция выше или ближе к верху экрана
+            if (sectionTop >= 0 && sectionTop <= window.innerHeight / 2) {
+                currentSection = section;
+            }
+        });
+
+        // Убираем класс active у всех ссылок
+        navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").includes(currentSection.getAttribute("id"))) {
+                link.classList.add("active");
+            }
+        });
+    }
+
+
+    window.addEventListener("scroll", activateSection);
 
     const header = document.querySelector(".header");
 
