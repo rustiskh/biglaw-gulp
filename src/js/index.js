@@ -55,8 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return rect.top + scrollTop; // Возвращает точное расстояние от элемента до верха страницы
     }
 
-    console.log(articleNav.clientHeight);
-
 
     if (articleNav && window.innerWidth < 768) {
         articleNav.classList.remove("open");
@@ -89,15 +87,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         articleNav.addEventListener('click', () => {
             const isOpen = articleNav.classList.contains("open");
-            console.log(isOpen);
 
             if (isOpen) {
                 articleNavControllerStatus.innerHTML = "Свернуть"
             } else {
                 articleNavControllerStatus.innerHTML = "Развернуть"
             }
-
-
         })
     }
 
