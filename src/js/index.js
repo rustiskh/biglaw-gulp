@@ -67,11 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (!isSticky && currentScroll > articleNavOffsetTop) {
                 articleNav.classList.add("sticky");
-                // articleNavControllerStatus.innerHTML = "Развернуть"
-                // articleNav.classList.remove("open");
             } else if (isSticky && currentScroll <= articleNavOffsetTop) {
                 articleNav.classList.remove("sticky");
-                // articleNav.classList.add("open");
             }
         });
 

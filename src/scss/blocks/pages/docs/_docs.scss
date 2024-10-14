@@ -1,0 +1,33 @@
+.docs {
+	margin-top: 60px;
+	margin-bottom: 80px;
+
+	@include tablet {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+
+	&__header {
+		margin-bottom: 42px;
+
+		@include tablet {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__body {
+		&-title {
+			&:not(:first-child) {
+				margin-top: 18px;
+			}
+		}
+
+		&-text {
+			margin-top: 8px;
+
+			@include tablet {
+				font-size: 14px;
+			}
+		}
+	}
+}
