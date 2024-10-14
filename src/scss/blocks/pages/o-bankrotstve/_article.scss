@@ -1,0 +1,173 @@
+.article {
+	margin-top: 60px;
+	margin-bottom: 80px;
+
+	@include tablet {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+
+	&__header {
+		margin-bottom: 42px;
+
+		@include tablet {
+			margin-bottom: 24px;
+		}
+
+		&-title {
+			font-size: 34px;
+			margin-bottom: 16px;
+
+			@include tablet {
+				font-size: 26px;
+				margin-bottom: 8px;
+			}
+		}
+	}
+
+	&__message {
+		padding: 12px 18px;
+		border-radius: 8px;
+		border: 1px solid $blue;
+		margin-bottom: 16px;
+		font-weight: 500;
+		font-style: italic;
+
+		@include tablet {
+			margin-bottom: 8px;
+		}
+	}
+
+	&__body {
+		position: relative;
+		display: flex;
+
+		@include tablet {
+			flex-direction: column-reverse;
+		}
+
+		ul,
+		ol {
+			list-style-position: inside;
+		}
+	}
+
+	&__text {
+		&-section {
+			color: $black;
+			margin-bottom: 30px;
+
+			@include tablet {
+				margin-top: 36px;
+			}
+
+			p,
+			ol,
+			ul,
+			h3 {
+				margin-top: 16px;
+
+				@include tablet {
+					margin-top: 12px;
+				}
+			}
+
+			li {
+				margin-top: 6px;
+
+				@include tablet {
+					margin-top: 4px;
+				}
+			}
+		}
+
+		&-title {
+			font-size: 30px;
+			margin-bottom: 16px;
+
+			@include tablet {
+				font-size: 24px;
+				margin-bottom: 8px;
+			}
+		}
+	}
+
+	&__text-wrapper {
+		flex: 1 1 80%;
+
+		@include tablet {
+			flex: auto;
+			margin-top: 40px;
+		}
+	}
+
+	&__sidebar {
+		flex: 1 1 260px;
+		margin-left: 20px;
+
+		@include tablet {
+			flex: auto;
+			width: 100%;
+			margin-left: 0;
+			bottom: 0px;
+			left: 0;
+			z-index: 10;
+			background-color: $white;
+		}
+
+		&.sticky {
+			position: fixed;
+
+			.article__sidebar-controller {
+				background-color: $light-gray;
+			}
+		}
+
+		&.open {
+			.article__sidebar-list {
+				display: block;
+			}
+		}
+
+		&-controller {
+			display: none;
+			align-items: center;
+			justify-content: space-between;
+			padding: 8px 6px;
+			background-color: $light-gray;
+			border-radius: 6px;
+
+			@include tablet {
+				display: flex;
+			}
+		}
+
+		&-list {
+			display: none;
+			position: sticky;
+			top: 60px !important;
+
+			list-style: none;
+
+			@include tablet {
+				padding: 24px 12px;
+			}
+
+			&-item {
+				&:not(:last-child) {
+					margin-bottom: 8px;
+				}
+			}
+
+			&-link {
+				color: $black;
+
+				font-size: 14px;
+
+				&.active {
+					font-weight: 600;
+				}
+			}
+		}
+	}
+}

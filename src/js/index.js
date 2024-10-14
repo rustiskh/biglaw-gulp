@@ -7,55 +7,99 @@ mobileNav();
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll(".article__text-section");
-    const navLinks = document.querySelectorAll(".article__sidebar-list-link");
 
-    // function activateSection() {
-    //     let current = "";
 
-    //     sections.forEach((section) => {
-    //         const sectionTop = section.offsetTop;
-    //         const sectionHeight = section.clientHeight;
-    //         if (window.scrollY >= sectionTop - sectionHeight / 3) {
-    //             current = section.getAttribute("id");
-    //         }
-    //     });
+    const articleNavSection = document.querySelectorAll(".article__text-section"); // Все секции статьи
+    const articleNavLinks = document.querySelectorAll(".article__sidebar-list-link"); // Все ссылки в боковом меню
 
-    //     navLinks.forEach((link) => {
-    //         link.classList.remove("active");
-    //         if (link.getAttribute("href").includes(current)) {
-    //             link.classList.add("active");
-    //         }
-    //     });
-    // }
+    // Функция для удаления класса "active" у всех ссылок
+    function removeActiveClass() {
+        articleNavLinks.forEach((link) => link.classList.remove("active"));
+    }
 
-    function activateSection() {
-        let currentSection = sections[0]; // По умолчанию первая секция
+    // Функция для добавления класса "active" к соответствующей ссылке
+    function setActiveLink(id) {
+        removeActiveClass();
+        const activeLink = document.querySelector(`.article__sidebar-list-link[href="#${id}"]`);
+        if (activeLink) {
+            activeLink.classList.add("active");
+        }
+    }
 
-        sections.forEach((section) => {
+    // Отслеживание скроллинга и определение самой близкой к верху секции
+    window.addEventListener("scroll", function () {
+        let currentSection = null;
+
+        articleNavSection.forEach((section) => {
             const sectionTop = section.getBoundingClientRect().top;
-
-            // Проверяем, что секция выше или ближе к верху экрана
-            if (sectionTop >= 0 && sectionTop <= window.innerHeight / 2) {
+            if (sectionTop <= 50 && sectionTop >= -section.offsetHeight / 2) {
                 currentSection = section;
             }
         });
 
-        // Убираем класс active у всех ссылок
-        navLinks.forEach((link) => {
-            link.classList.remove("active");
-            if (link.getAttribute("href").includes(currentSection.getAttribute("id"))) {
-                link.classList.add("active");
-            }
-        });
+        if (currentSection) {
+            setActiveLink(currentSection.id);
+        }
+    });
+
+    // Article navigation
+    const articleNav = document.querySelector(".article__sidebar")
+    const articleNavController = document.querySelector(".article__sidebar-controller")
+    const articleNavControllerStatus = document.querySelector(".article__sidebar-controller-status")
+    const articleTextWrapper = document.querySelector(".article__text-wrapper")
+
+
+    function getOffsetTop(element) {
+        const rect = element.getBoundingClientRect(); // Позиция элемента относительно окна
+        const scrollTop = window.scrollY || document.documentElement.scrollTop; // Текущий скролл страницы
+        return rect.top + scrollTop; // Возвращает точное расстояние от элемента до верха страницы
     }
 
+    console.log(articleNav.clientHeight);
 
-    window.addEventListener("scroll", activateSection);
 
+    if (articleNav && window.innerWidth < 768) {
+        articleNav.classList.remove("open");
+        // Сохраняем начальное положение элемента
+        const articleNavOffsetTop = getOffsetTop(articleNav);
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            const isSticky = articleNav.classList.contains("sticky");
+
+            if (!isSticky && currentScroll > articleNavOffsetTop) {
+                articleNav.classList.add("sticky");
+                // articleNav.classList.remove("open");
+            } else if (isSticky && currentScroll <= articleNavOffsetTop) {
+                articleNav.classList.remove("sticky");
+                // articleNav.classList.add("open");
+            }
+        });
+
+        articleNavController.addEventListener('click', () => {
+            articleNav.classList.toggle("open");
+        })
+
+        articleNavLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                articleNav.classList.remove("open");
+            })
+        })
+
+        // if () {
+        //     articleNavControllerStatus.innerHTML = "Развернуть"
+        // } else {
+        //     articleNavControllerStatus.innerHTML = "Свернуть"
+        // }
+    }
+
+    // sticky header
     const header = document.querySelector(".header");
 
     window.addEventListener("scroll", () => {
+        if (window.location.pathname.includes('o-bankrotstve')) {
+            return
+        }
         const currentScroll = window.scrollY;
         if (currentScroll > 600) {
             header.classList.add("sticky");
