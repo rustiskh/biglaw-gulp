@@ -30,11 +30,18 @@
 		border-radius: 8px;
 		border: 1px solid $blue;
 		margin-bottom: 16px;
-		font-weight: 500;
-		font-style: italic;
+
+		p {
+			font-weight: 500;
+			font-style: italic;
+		}
 
 		@include tablet {
 			margin-bottom: 8px;
+		}
+
+		&-button {
+			margin-top: 16px;
 		}
 	}
 
@@ -97,7 +104,6 @@
 
 		@include tablet {
 			flex: auto;
-			margin-top: 40px;
 		}
 	}
 
@@ -120,6 +126,7 @@
 
 			.article__sidebar-controller {
 				background-color: $light-gray;
+				border-radius: 0px;
 			}
 		}
 
@@ -136,9 +143,19 @@
 			padding: 8px 6px;
 			background-color: $light-gray;
 			border-radius: 6px;
+			cursor: pointer;
 
 			@include tablet {
 				display: flex;
+			}
+
+			&-title {
+				font-size: 16px;
+				font-weight: 500;
+			}
+
+			&-status {
+				font-size: 12px;
 			}
 		}
 
@@ -166,6 +183,7 @@
 
 				&.active {
 					font-weight: 600;
+					font-style: italic;
 				}
 			}
 		}

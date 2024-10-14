@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (!isSticky && currentScroll > articleNavOffsetTop) {
                 articleNav.classList.add("sticky");
+                // articleNavControllerStatus.innerHTML = "Развернуть"
                 // articleNav.classList.remove("open");
             } else if (isSticky && currentScroll <= articleNavOffsetTop) {
                 articleNav.classList.remove("sticky");
@@ -86,11 +87,18 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         })
 
-        // if () {
-        //     articleNavControllerStatus.innerHTML = "Развернуть"
-        // } else {
-        //     articleNavControllerStatus.innerHTML = "Свернуть"
-        // }
+        articleNav.addEventListener('click', () => {
+            const isOpen = articleNav.classList.contains("open");
+            console.log(isOpen);
+
+            if (isOpen) {
+                articleNavControllerStatus.innerHTML = "Свернуть"
+            } else {
+                articleNavControllerStatus.innerHTML = "Развернуть"
+            }
+
+
+        })
     }
 
     // sticky header
